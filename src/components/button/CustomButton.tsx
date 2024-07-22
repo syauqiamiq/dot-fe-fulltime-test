@@ -6,12 +6,14 @@ import { BaseButtonProps } from "antd/es/button/button";
 interface ICustomButtonProps extends BaseButtonProps {
 	buttonTitle: string;
 	htmlType: string | any;
+	onClick?: () => void;
 }
 const CustomButton = ({
 	type,
 	buttonTitle,
 	htmlType,
 	size,
+	onClick,
 }: ICustomButtonProps) => {
 	return (
 		<Button
@@ -19,6 +21,7 @@ const CustomButton = ({
 			type={type}
 			htmlType={htmlType}
 			size={size}
+			onClick={onClick}
 		>
 			{buttonTitle}
 		</Button>

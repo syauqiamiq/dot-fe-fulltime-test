@@ -15,6 +15,7 @@ import { rupiahFormatter } from "@libs/functions";
 import { Card, Skeleton } from "antd";
 import { FormProvider, useForm } from "react-hook-form";
 import { defaultValues, formSchema } from "../constants/form-constant";
+import CostCard from "../components/CostCard";
 
 const LandingPage = () => {
 	const formMethods = useForm({
@@ -92,10 +93,9 @@ const LandingPage = () => {
 				originProvinceLoading ||
 				destinationCityLoading ||
 				destinationProvinceLoading ? (
-					<>
-						<Skeleton className="mt-5" active />
-						<Skeleton className="mt-2" active />
-					</>
+					[1, 2].map((_, i) => {
+						return <Skeleton key={i} className="mt-5" active />;
+					})
 				) : originProvinceError ||
 				  originCityError ||
 				  destinationProvinceError ||
@@ -222,32 +222,14 @@ const LandingPage = () => {
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
 					{costLoading ? (
-						<>
-							<Skeleton active />
-							<Skeleton active />
-							<Skeleton active />
-							<Skeleton active />
-						</>
+						[1, 2, 3, 4].map((_, i) => {
+							return <Skeleton key={i} active />;
+						})
 					) : costError ? (
 						"Something wrong with the API"
 					) : costSuccess ? (
 						costData?.rajaongkir.results[0].costs.map((v, i) => {
-							return (
-								<Card
-									key={i}
-									className="mt-2 border-2 rounded-lg shadow-lg w-full min-h-[100px]"
-								>
-									<h3 className=" text-gray-400 font-poppins font-semibold text-lg">
-										{v.service} ({v.cost[0].etd} Hari)
-									</h3>
-									<h4 className="font-poppins font-normal text-sm">
-										{v.description}
-									</h4>
-									<h5 className="font-poppins font-medium text-4xl mt-2">
-										{rupiahFormatter(v.cost[0].value)}
-									</h5>
-								</Card>
-							);
+							return <CostCard data={v} key={i} />;
 						})
 					) : (
 						<></>

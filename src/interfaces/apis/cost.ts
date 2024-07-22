@@ -7,7 +7,7 @@ interface IDetails {
 	postal_code: string | any;
 }
 
-interface CostService {
+export interface ICostService {
 	service: string | any;
 	description: string | any;
 	cost: {
@@ -20,7 +20,7 @@ interface CostService {
 interface CostResult {
 	code: string | any;
 	name: string | any;
-	costs: CostService[];
+	costs: ICostService[];
 }
 
 export interface IRajaOngkirCostResponse {
