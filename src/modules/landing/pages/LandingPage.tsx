@@ -1,8 +1,12 @@
 "use client";
 
+import { useGetRajaOngkirProvinceQuery } from "@libs/apis/endpoint/raja-ongkir";
 import Image from "next/image";
 
-const HomePage = () => {
+const LandingPage = () => {
+	const { data } = useGetRajaOngkirProvinceQuery({
+		id: 1,
+	});
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
 			<div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -114,4 +118,4 @@ const HomePage = () => {
 	);
 };
 
-export default HomePage;
+export default LandingPage;

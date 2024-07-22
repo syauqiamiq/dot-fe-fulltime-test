@@ -1,3 +1,5 @@
-import HomePage from "@modules/HomePage/pages/HomePage";
+"use client";
 
-export default HomePage;
+import LandingPage from "@modules/landing/pages/LandingPage";
+
+export default LandingPage;
