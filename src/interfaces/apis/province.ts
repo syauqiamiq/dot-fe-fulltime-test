@@ -1,5 +1,9 @@
 "use client";
 
+export interface IRajaOngkirProvince {
+	province_id: string | any;
+	province: string | any;
+}
 export interface IRajaOngkirProvinceResponse {
 	rajaongkir: {
 		query: {
@@ -9,9 +13,6 @@ export interface IRajaOngkirProvinceResponse {
 			code: number | any;
 			description: string | any;
 		};
-		results: {
-			province_id: string | any;
-			province: string | any;
-		};
+		results: IRajaOngkirProvince[];
 	};
 }

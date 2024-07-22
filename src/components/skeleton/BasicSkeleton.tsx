@@ -9,13 +9,7 @@ interface IBasicSkeletonProps {
 }
 const BasicSkeleton = ({ size, shape }: IBasicSkeletonProps) => {
 	return (
-		<Skeleton.Button
-			className="dark:bg-gradient-to-r dark:from-gray-800  dark:to-slate-700"
-			active={true}
-			size={size}
-			shape={shape}
-			block={true}
-		/>
+		<Skeleton.Button active={true} size={size} shape={shape} block={true} />
 	);
 };
 

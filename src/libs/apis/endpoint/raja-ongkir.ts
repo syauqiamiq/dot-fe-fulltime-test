@@ -20,7 +20,6 @@ export const rajaOngkirProvinceApi = baseApi
 					query: ({ id }: { id: number | any }) => ({
 						method: "GET",
 						url: `/raja-ongkir/province?id=${id}`,
-						cache: "no-cache",
 					}),
 				}),
 				getRajaOngkirCity: builder.query<
@@ -39,7 +38,6 @@ export const rajaOngkirProvinceApi = baseApi
 					}) => ({
 						method: "GET",
 						url: `/raja-ongkir/city?id=${id}&province=${province}`,
-						cache: "no-cache",
 					}),
 				}),
 				getRajaOngkirCost: builder.mutation<
