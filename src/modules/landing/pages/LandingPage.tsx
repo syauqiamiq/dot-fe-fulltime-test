@@ -11,13 +11,14 @@ import {
 	useGetRajaOngkirCostMutation,
 	useGetRajaOngkirProvinceQuery,
 } from "@libs/apis/endpoint/raja-ongkir";
-import { rupiahFormatter } from "@libs/functions";
-import { Card, Skeleton } from "antd";
+import { Card, message, Skeleton } from "antd";
 import { FormProvider, useForm } from "react-hook-form";
-import { defaultValues, formSchema } from "../constants/form-constant";
 import CostCard from "../components/CostCard";
+import { defaultValues, formSchema } from "../constants/form-constant";
 
 const LandingPage = () => {
+	const [messageApi, contextHolder] = message.useMessage();
+
 	const formMethods = useForm({
 		defaultValues: defaultValues,
 		mode: "onSubmit",
@@ -77,12 +78,23 @@ const LandingPage = () => {
 			weight: data.weight,
 		})
 			.unwrap()
-			.then((res) => {})
-			.catch((err) => {});
+			.then((res) => {
+				messageApi.open({
+					type: "success",
+					content: "Cek ongkir berhasil",
+				});
+			})
+			.catch((err) => {
+				messageApi.open({
+					type: "error",
+					content: "Terjadi kesalahan",
+				});
+			});
 	};
 	return (
 		<div className="bg-white flex w-full min-h-[100vh] justify-center items-center">
-			<Card className="border-2 rounded-lg shadow-lg min-w-[1000px] min-h-[400px]">
+			{contextHolder}
+			<Card className="border-2 rounded-lg shadow-lg min-w-screen md:min-w-[700px] m-5 md:0 min-h-[400px]">
 				<h1 className="font-poppins text-2xl font-medium">
 					Cek Ongkir / Cek Tarif Ekspedisi
 				</h1>

@@ -15,7 +15,7 @@ const CostCard = ({ data }: ICostCardProps) => {
 				{data.service} ({data.cost[0].etd} Hari)
 			</h3>
 			<h4 className="font-poppins font-normal text-sm">{data.description}</h4>
-			<h5 className="font-poppins font-medium text-4xl mt-2">
+			<h5 className="font-poppins font-medium text-2xl mt-2">
 				{rupiahFormatter(data.cost[0].value)}
 			</h5>
 		</Card>

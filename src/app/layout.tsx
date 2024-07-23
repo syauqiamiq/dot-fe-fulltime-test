@@ -20,9 +20,6 @@ export default function RootLayout({
 					<Layout>
 						<Header
 							style={{
-								position: "fixed",
-								top: 0,
-								zIndex: 1,
 								width: "100%",
 							}}
 							className="flex w-full items-center justify-between"
