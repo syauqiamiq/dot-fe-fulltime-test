@@ -60,6 +60,11 @@ const LoginCard = () => {
 			<h4 className="mb-8 font-poppins md:text-base text-xs text-gray-400 font-medium">
 				Masukkan email dan kata sandi Anda di bawah ini
 			</h4>
+
+			<div className="flex flex-col gap-2">
+				<span>Email: guest@email.com</span>
+				<span>Password: guest</span>
+			</div>
 			<FormProvider {...formMethods}>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="flex flex-col gap-10">

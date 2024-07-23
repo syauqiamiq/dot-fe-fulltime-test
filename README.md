@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Technical Test for Frontend Developer NextJS - DOT Indonesia
 
-## Getting Started
+## Author
 
-First, run the development server:
+Muhammad Syauqi Amiq Amrullah
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Overview
+
+Website ini dibuat menggunakan framework Next.js dengan state management menggunakan Redux Toolkit dan RTK Query untuk komunikasi API. Website ini menggunakan Tailwind CSS yang di padukan dengan Ant Design. Fitur utama website ini adalah cek ongkir dari jasa ekspedisi POS Indonesia, JNE dan TIKI dengan memanfaatkan third-party API milik RajaOngkir.
+
+## Tech Stack
+
+CSS Framework: Tailwind CSS
+
+UI Framework: Ant Design
+
+Programming Language: TypeScript
+
+Framework: Next.js (14.2.4)
+
+## Requirement
+
+Node.js Version: 20.10.0
+
+Yarn Version: 1.22.21
+
+React Version: ^18
+
+## Live Preview
+
+[See Live Preview on Vercel](https://dot-fe-fulltime-test.vercel.app/)
+
+## Dummy Account
+
+Guest:
+
+```shell
+email: guest@email.com
+password: guest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dummy Account
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Guest:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```shell
+email: guest@email.com
+password: guest
+```
 
-## Learn More
+## Installation Guide
 
-To learn more about Next.js, take a look at the following resources:
+clone:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+git clone https://github.com/syauqiamiq/dot-fe-fulltime-test
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+masuk ke directory project:
 
-## Deploy on Vercel
+```shell
+cd dot-fe-fulltime-test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+install package dengan "yarn":
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+yarn
+```
+
+copy `.env.example` menjadi `.env.development`, dan isikan env variable berikut:
+
+```shell
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000/api
+RAJA_ONGKIR_API_KEY=0dbeffe294d1cb46d3ea6ea268b36047
+RAJA_ONGKIR_SERVERSIDE_API_URL=https://api.rajaongkir.com/starter
+```
+
+jalankan development server:
+
+```shell
+yarn dev
+```
